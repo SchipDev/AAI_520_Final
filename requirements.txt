@@ -1,2 +1,1 @@
 flask
-Werkzeug==2.2.2
