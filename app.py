@@ -23,6 +23,6 @@ def get_bot_response(user_message):
     # Simple example: Echo the user's message
     return user_message
 
-# if __name__ == '__main__':
-print("running")
-app.run()
+if __name__ == '__main__':
+    print("running")
+    app.run()
