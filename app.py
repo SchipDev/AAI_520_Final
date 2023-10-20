@@ -2,9 +2,10 @@ from flask import Flask
 from flask import render_template
 from flask import request
 from flask import jsonify
-#from werkzeug import url_quote
+from model import ChatBot
 
 app = Flask(__name__)
+bot = ChatBot()
 
 @app.route('/')
 def index():
@@ -18,9 +19,7 @@ def get_bot_response():
     return jsonify({'bot_response': bot_response})
 
 def get_bot_response(user_message):
-    # Replace this function with your chatbot's response logic
-    # Simple example: Echo the user's message
-    return "Hello, I am still being set up!"
+    return bot.generate_response(user_message)
 
 if __name__ == '__main__':
     print("running")
