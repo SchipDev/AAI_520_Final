@@ -1,14 +1,14 @@
 import torch
 import os
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import BertForQuestionAnswering, AutoTokenizer
 
 class ChatBot():
     
     def __init__(self):
         checkpoint_dir = "checkpoint-21500"
 
-        self.tokenizer = AutoTokenizer.from_pretrained(checkpoint_dir)
-        self.model = AutoModelForCausalLM.from_pretrained(checkpoint_dir)
+        self.tokenizer =  AutoTokenizer.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
+        self.model = BertForQuestionAnswering.from_pretrained('bert-large-uncased-whole-word-masking-finetuned-squad')
 
         self.context = []
 
